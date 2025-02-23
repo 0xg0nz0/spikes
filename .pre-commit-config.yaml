@@ -1,52 +1,47 @@
 ---
 repos:
-    - repo: https://github.com/adrienverge/yamllint.git
-      rev: v1.35.1
-      hooks:
-          - id: yamllint
-            args: [--format, parsable, --strict, --config-file, .github/linters/yamllint.yml]
-    - repo: https://github.com/astral-sh/ruff-pre-commit
-      rev: v0.8.4
-      hooks:
-          - id: ruff
-            args: [--fix, --config, .github/linters/ruff.toml]
-            types_or: [python, pyi]
-          - id: ruff-format
-            args: [--config, .github/linters/ruff.toml]
-            types_or: [python, pyi]
     - repo: https://github.com/gitleaks/gitleaks
       rev: v8.24.0
       hooks:
           - id: gitleaks
-    - repo: https://github.com/hadolint/hadolint
-      rev: v2.13.1-beta
-      hooks:
-          - id: hadolint
-            args: [--config, .github/linters/.hadolint.yaml]
     - repo: https://github.com/igorshubovych/markdownlint-cli
       rev: v0.44.0
       hooks:
           - id: markdownlint
             args: [--config, .github/linters/markdownlint.json]
-    - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-      rev: 0.2.3
-      hooks:
-          - id: yamlfmt
     - repo: https://github.com/pre-commit/pre-commit-hooks
       rev: v5.0.0
       hooks:
           - id: check-added-large-files
-          - id: check-json
           - id: check-merge-conflict
-          - id: check-yaml
           - id: end-of-file-fixer
           - id: trailing-whitespace
-    - repo: https://github.com/scop/pre-commit-shfmt
-      rev: v3.10.0-2
-      hooks:
-          - id: shfmt
     - repo: local
       hooks:
+          - id: pants-fmt
+            name: Pants formatting
+            entry: "pants fmt ::"
+            language: system
+            pass_filenames: false
+            always_run: true
+          - id: pants-lint
+            name: Pants linting
+            entry: "pants lint ::"
+            language: system
+            pass_filenames: false
+            always_run: true
+          - id: pants-check
+            name: Pants type-checking
+            entry: "pants check ::"
+            language: system
+            pass_filenames: false
+            always_run: true
+          - id: pants-test
+            name: Run tests
+            entry: "pants test ::"
+            language: system
+            pass_filenames: false
+            always_run: true
           - id: flawfinder
             name: flawfinder
             entry: flawfinder --quiet -S -D --error-level=1
