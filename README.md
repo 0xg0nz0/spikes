@@ -18,11 +18,11 @@ The setup should work for both x86 and ARM hardware. It's tested on Apple M1 (lo
 
 This project uses [pants](https://pantsbuild.org) for its build process. The below is just a cheat sheet; if you want to learn more, read the Pants documentation.
 
-- `pants fmt`: auto-formats all files based on the same linting rules in `.github/linters` which are used in pre-commit and CI
-- `pants lint`: runs linters using `.github/linters` settings shared with pre-commit and CI
-- `pants check`: performs enhanced static checks (e.g. mypy for Python)
-- `pants test`: runs all unit tests
-- `pants pre-commit`: custom task that runs `fmt`, `lint`, `check` and `test` in a single call, to run the standard code quality and formatting before you commit
+- `pants fmt ::`: auto-formats all files based on the same linting rules in `.github/linters` which are used in pre-commit and CI
+- `pants lint ::`: runs linters using `.github/linters` settings shared with pre-commit and CI
+- `pants check ::`: performs enhanced static checks (e.g. mypy for Python)
+- `pants test ::`: runs all unit tests
+- `pants pre-commit ::`: custom task that runs `fmt`, `lint`, `check` and `test` in a single call, to run the standard code quality and formatting before you commit
 
 You can scope the various goals like `fmt` to run on a single module, e.g. `pants fmt //wasmtime::` or run globally.
 
