@@ -1,0 +1,21 @@
+{
+    "name": "mold Linker",
+    "id": "mold",
+    "version": "1.0.0",
+    "description": "A feature to pre-install the high-performance mold linker",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "2.33.0"
+            ],
+            "default": "latest",
+            "description": "Set the version of mold to download and install."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers-contrib/features/apt-packages"
+    ]
+}

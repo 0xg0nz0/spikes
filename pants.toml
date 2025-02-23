@@ -1,0 +1,66 @@
+[GLOBAL]
+pants_version = "2.26.0.dev5"
+backend_packages = [
+    "pants.backend.build_files.fmt.ruff",
+    "pants.backend.docker",
+    "pants.backend.docker.lint.hadolint",
+    "pants.backend.plugin_development",
+    "pants.backend.python",
+    "pants.backend.python.typecheck.mypy",
+    "pants.backend.shell",
+    "pants.backend.shell.lint.shfmt",
+    "pants.backend.shell.lint.shellcheck",
+    "pants.backend.tools.taplo",
+    "pants.backend.experimental.adhoc",
+    "pants.backend.experimental.cc",
+    "pants.backend.experimental.cc.lint.clangformat",
+    "pants.backend.experimental.python",
+    "pants.backend.experimental.python.lint.add_trailing_comma",
+    "pants.backend.experimental.python.lint.ruff.check",
+    "pants.backend.experimental.python.lint.ruff.format",
+    "pants.backend.experimental.rust",
+    "pants.backend.experimental.tools.yamllint",
+]
+
+[cli.alias]
+pre-commit = "fmt lint check test"
+
+[export]
+py_editable_in_resolve = []
+resolve = ["repo-deps"]
+
+[mypy]
+config = ".github/linters/mypy.ini"
+install_from_resolve = "mypy"
+
+[pytest]
+install_from_resolve = "pytest"
+requirements = ["//3rdparty/python:pytest"]
+
+[python]
+default_resolve = "spikes-deps"
+enable_resolves = true
+interpreter_constraints = ['==3.12.*']
+
+[python.resolves]
+
+# tools
+pytest = "3rdparty/python/pytest.lock"
+mypy = "3rdparty/python/mypy.lock"
+ruff = "3rdparty/python/ruff.lock"
+
+# libraries
+repo-deps = "3rdparty/python/repo-deps.lock"
+
+[ruff]
+config = ".github/linters/ruff.toml"
+
+[taplo]
+glob_pattern = ["**/*.toml", "!pyproject.toml", "!.taplo.toml", "!taplo.toml"]
+
+[test]
+attempts_default = 3
+
+[yamllint]
+config_file_name = ".github/linters/yamllint.yml"
+exclude = []
