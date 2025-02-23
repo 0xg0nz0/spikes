@@ -4,7 +4,7 @@ from pants.option.option_types import StrOption
 
 
 class PyMarkdown(PythonToolBase):
-    options_scope = "black"
+    options_scope = "markdownlint"
     help = "The PyMarkdown linter (https://pymarkdown.readthedocs.io/)."
 
     default_main = ConsoleScript("pymarkdown")
