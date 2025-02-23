@@ -96,6 +96,7 @@
                 "ms-toolsai.jupyter-renderers",
                 "narasimapandiyan.jetbrainsmono",
                 "njpwerner.autodocstring",
+                "redhat.vscode-yaml",
                 "robotpajamas.vscode-suspenders@prerelease",
                 "shd101wyy.markdown-preview-enhanced",
                 "stuart.unique-window-colors",
