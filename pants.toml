@@ -38,7 +38,7 @@ install_from_resolve = "pytest"
 requirements = ["//3rdparty/python:pytest"]
 
 [python]
-default_resolve = "spikes-deps"
+default_resolve = "repo-deps"
 enable_resolves = true
 interpreter_constraints = ['==3.12.*']
 
