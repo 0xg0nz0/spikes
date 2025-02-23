@@ -20,7 +20,11 @@ backend_packages = [
   "pants.backend.experimental.python.lint.ruff.format",
   "pants.backend.experimental.rust",
   "pants.backend.experimental.tools.yamllint",
+
+  # local plugins
+  "markdown",
 ]
+pythonpath = ["%(buildroot)s/pants-plugins"]
 
 [cli.alias]
 pre-commit = "fmt lint check test"
@@ -44,6 +48,9 @@ interpreter_constraints = ['==3.12.*']
 
 [python.resolves]
 
+# plugins
+pants-plugins = "pants-plugins/requirements.lock"
+
 # tools
 pytest = "3rdparty/python/pytest.lock"
 mypy = "3rdparty/python/mypy.lock"
@@ -52,8 +59,14 @@ ruff = "3rdparty/python/ruff.lock"
 # libraries
 repo-deps = "3rdparty/python/repo-deps.lock"
 
+[python.resolves_to_interpreter_constraints]
+pants-plugins = ["==3.9.*"]
+
 [ruff]
 config = ".github/linters/ruff.toml"
+
+[source]
+root_patterns = ["pants-plugins"]
 
 [taplo]
 glob_pattern = ["**/*.toml", "!pyproject.toml", "!.taplo.toml", "!taplo.toml"]
