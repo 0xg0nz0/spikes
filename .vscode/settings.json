@@ -21,11 +21,12 @@
     "mypy-type-checker.preferDaemon": true,
     "python.analysis.exclude": [
         ".pants.d/**/*",
-        ".venv/**/*"
+        "dist/**/*"
     ],
     "python.analysis.extraPaths": [
         "./pants-plugins"
     ],
+    "python.defaultInterpreterPath": "${workspaceFolder}/dist/export/python/virtualenvs/repo-deps/3.12.4/bin/python3",
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": false,
     "python.testing.pytestArgs": [

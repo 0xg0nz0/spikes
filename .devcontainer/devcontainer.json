@@ -108,5 +108,6 @@
             ]
         }
     },
+    "onCreateCommand": "${containerWorkspaceFolder}/.devcontainer/pre-install.sh",
     "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/post-install.sh"
 }
