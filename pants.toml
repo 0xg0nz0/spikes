@@ -34,6 +34,9 @@ pre-commit = "fmt lint check test"
 py_editable_in_resolve = []
 resolve = ["repo-deps", "pants-plugins"]
 
+[markdownlint]
+config = ".github/linters/pymarkdown.json"
+
 [mypy]
 config = ".github/linters/mypy.ini"
 install_from_resolve = "mypy"
@@ -63,6 +66,7 @@ repo-deps = "3rdparty/python/repo-deps.lock"
 
 [python.resolves_to_interpreter_constraints]
 pants-plugins = ["==3.9.*"]
+pymarkdown = ["==3.9.*"]
 
 [ruff]
 config = ".github/linters/ruff.toml"

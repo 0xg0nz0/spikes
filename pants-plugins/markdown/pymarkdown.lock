@@ -6,10 +6,10 @@
 // {
 //   "version": 3,
 //   "valid_for_interpreter_constraints": [
-//     "CPython==3.12.*"
+//     "CPython==3.9.*"
 //   ],
 //   "generated_with_requirements": [
-//     "pymarkdown"
+//     "pymarkdownlnt"
 //   ],
 //   "manylinux": "manylinux2014",
 //   "requirement_constraints": [],
@@ -32,16 +32,132 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "680e36d2d81148a0f9ff4b932b8e30517a591f3f719215940a6672c163cf6de8",
-              "url": "https://files.pythonhosted.org/packages/f2/93/28382c3eec15f7cce0b07d92770de445d2cc1d4702dfa16ba2892cbf0ad1/pymarkdown-0.1.4.tar.gz"
+              "hash": "a4fe684e4d95fc45054d3316acf763a7b0f29342ccea02eee09de53004f0139c",
+              "url": "https://files.pythonhosted.org/packages/06/27/ea2b77232385ec1c4b5cb766ee13b5a3085ed2fa789d61374e7af36b79e1/application_properties-0.8.2-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "e5e6918c8e29ab57175567d51dfa39c00a1d75b3205625559bb02250f50f0420",
+              "url": "https://files.pythonhosted.org/packages/c1/5e/29ec0fa553ee5befc6a1e47eb0c8ffea75eed941251524678700e2d3e747/application_properties-0.8.2.tar.gz"
             }
           ],
-          "project_name": "pymarkdown",
+          "project_name": "application-properties",
           "requires_dists": [
-            "toolz"
+            "pyyaml>=5.4.1",
+            "tomli>=2.0.1",
+            "typing-extensions>=4.5.0"
+          ],
+          "requires_python": ">=3.8.0",
+          "version": "0.8.2"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "8efb692a7e6ca07dcc8f4ea889960421331a5dffa8e5af81f0a67ad8ea1fc798",
+              "url": "https://files.pythonhosted.org/packages/06/00/a17a5657bf090b9dffdb310ac273c553a38f9252f60224da9fe62d9b60e9/Columnar-1.4.1-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "c3cb57273333b2ff9cfaafc86f09307419330c97faa88dcfe23df05e6fbb9c72",
+              "url": "https://files.pythonhosted.org/packages/5e/0d/a0b2fd781050d29c9df64ac6df30b5f18b775724b79779f56fc5a8298fe9/Columnar-1.4.1.tar.gz"
+            }
+          ],
+          "project_name": "columnar",
+          "requires_dists": [
+            "toolz",
+            "wcwidth"
           ],
           "requires_python": null,
-          "version": "0.1.4"
+          "version": "1.4.1"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "40af0406ed9fb78818e9c4b41c98a12b764ad39437e4f1f4bdce99b3c6cbbc59",
+              "url": "https://files.pythonhosted.org/packages/8f/e3/22b4f588b936c2d9affe913f33a69df7e3935b2bb9bcb1b7310f3071bfff/pymarkdownlnt-0.9.28-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "41d03819b0f5e9f74e377bf70183c2678993f13de3622d49b369fc2d567afaf1",
+              "url": "https://files.pythonhosted.org/packages/99/d6/f0e0fefa6a20b9018c1b5108f662b934fbea4ab2aafd03a01ac53cad6bca/pymarkdownlnt-0.9.28.tar.gz"
+            }
+          ],
+          "project_name": "pymarkdownlnt",
+          "requires_dists": [
+            "application-properties>=0.8.2",
+            "columnar>=1.4.0",
+            "typing-extensions>=4.7.0"
+          ],
+          "requires_python": ">=3.9.0",
+          "version": "0.9.28"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "a9f8c2e67970f13b16084e04f134610fd1d374bf477b17ec1599185cf611d725",
+              "url": "https://files.pythonhosted.org/packages/82/72/04fcad41ca56491995076630c3ec1e834be241664c0c09a64c9a2589b507/PyYAML-6.0.2-cp39-cp39-musllinux_1_1_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "a8786accb172bd8afb8be14490a16625cbc387036876ab6ba70912730faf8e1f",
+              "url": "https://files.pythonhosted.org/packages/0a/02/6ec546cd45143fdf9840b2c6be8d875116a64076218b61d68e12548e5839/PyYAML-6.0.2-cp39-cp39-macosx_11_0_arm64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "d8e03406cac8513435335dbab54c0d385e4a49e4945d2909a581c83647ca0290",
+              "url": "https://files.pythonhosted.org/packages/0e/9a/8cc68be846c972bda34f6c2a93abb644fb2476f4dcc924d52175786932c9/PyYAML-6.0.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "3b1fdb9dc17f5a7677423d508ab4f243a726dea51fa5e70992e59a7411c89d19",
+              "url": "https://files.pythonhosted.org/packages/3d/32/e7bd8535d22ea2874cef6a81021ba019474ace0d13a4819c2a4bce79bd6a/PyYAML-6.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e",
+              "url": "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "688ba32a1cffef67fd2e9398a2efebaea461578b0923624778664cc1c914db5d",
+              "url": "https://files.pythonhosted.org/packages/65/d8/b7a1db13636d7fb7d4ff431593c510c8b8fca920ade06ca8ef20015493c5/PyYAML-6.0.2-cp39-cp39-macosx_10_9_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "0b69e4ce7a131fe56b7e4d770c67429700908fc0752af059838b1cfb41960e4e",
+              "url": "https://files.pythonhosted.org/packages/d7/12/7322c1e30b9be969670b672573d45479edef72c9a0deac3bb2868f5d7469/PyYAML-6.0.2-cp39-cp39-musllinux_1_1_aarch64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "f753120cb8181e736c57ef7636e83f31b9c0d1722c516f7e86cf15b7aa57ff12",
+              "url": "https://files.pythonhosted.org/packages/e9/6c/6e1b7f40181bc4805e2e07f4abc10a88ce4648e7e95ff1abe4ae4014a9b2/PyYAML-6.0.2-cp39-cp39-manylinux_2_17_s390x.manylinux2014_s390x.whl"
+            }
+          ],
+          "project_name": "pyyaml",
+          "requires_dists": [],
+          "requires_python": ">=3.8",
+          "version": "6.0.2"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "cb55c73c5f4408779d0cf3eef9f762b9c9f147a77de7b258bef0a5628adc85cc",
+              "url": "https://files.pythonhosted.org/packages/6e/c2/61d3e0f47e2b74ef40a68b9e6ad5984f6241a942f7cd3bbfbdbd03861ea9/tomli-2.2.1-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "cd45e1dc79c835ce60f7404ec8119f2eb06d38b1deba146f07ced3bbc44505ff",
+              "url": "https://files.pythonhosted.org/packages/18/87/302344fed471e44a87289cf4967697d07e532f2421fdaf868a303cbae4ff/tomli-2.2.1.tar.gz"
+            }
+          ],
+          "project_name": "tomli",
+          "requires_dists": [],
+          "requires_python": ">=3.8",
+          "version": "2.2.1"
         },
         {
           "artifacts": [
@@ -60,6 +176,44 @@
           "requires_dists": [],
           "requires_python": ">=3.8",
           "version": "1.0.0"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d",
+              "url": "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8",
+              "url": "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
+            }
+          ],
+          "project_name": "typing-extensions",
+          "requires_dists": [],
+          "requires_python": ">=3.8",
+          "version": "4.12.2"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859",
+              "url": "https://files.pythonhosted.org/packages/fd/84/fd2ba7aafacbad3c4201d395674fc6348826569da3c0937e75505ead3528/wcwidth-0.2.13-py2.py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5",
+              "url": "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
+            }
+          ],
+          "project_name": "wcwidth",
+          "requires_dists": [
+            "backports.functools-lru-cache>=1.2.1; python_version < \"3.2\""
+          ],
+          "requires_python": null,
+          "version": "0.2.13"
         }
       ],
       "platform_tag": null
@@ -73,10 +227,10 @@
   "pip_version": "24.2",
   "prefer_older_binary": false,
   "requirements": [
-    "pymarkdown"
+    "pymarkdownlnt"
   ],
   "requires_python": [
-    "==3.12.*"
+    "==3.9.*"
   ],
   "resolver_version": "pip-2020-resolver",
   "style": "universal",

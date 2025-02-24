@@ -1,1 +1,1 @@
-python_requirement(name="pymarkdown", requirements=["pymarkdown"], resolve="pymarkdown")
+python_requirement(name="pymarkdown", requirements=["pymarkdownlnt"], resolve="pymarkdown")
