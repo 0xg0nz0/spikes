@@ -26,7 +26,7 @@ from pants.engine.fs import (
 from pants.engine.platform import Platform
 from pants.engine.process import FallibleProcessResult, Process
 from pants.engine.rules import Get, MultiGet, collect_rules, rule
-from pants.engine.target import FieldSet, SingleSourceField
+from pants.engine.target import Dependencies, FieldSet, SingleSourceField
 from pants.engine.unions import UnionRule
 from pants.option.option_types import SkipOption, StrOption
 from pants.util.logging import LogLevel
@@ -54,10 +54,6 @@ class PyMarkdown(PythonToolBase):
     skip = SkipOption("lint")
 
 
-class MarkdownDependenciesField(AdhocToolDependenciesField):
-    pass
-
-
 class MarkdownSourceField(SingleSourceField):
     expected_file_extensions = (".md",)
 
@@ -67,7 +63,7 @@ class PyMarkdownFieldSet(FieldSet):
     required_fields = (MarkdownSourceField,)
 
     sources: MarkdownSourceField
-    dependencies: MarkdownDependenciesField
+    dependencies: Dependencies
 
 
 class MarkdownLintRequest(LintTargetsRequest):
