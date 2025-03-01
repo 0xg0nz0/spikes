@@ -1,0 +1,52 @@
+---
+repos:
+    - repo: https://github.com/gitleaks/gitleaks
+      rev: v8.24.0
+      hooks:
+          - id: gitleaks
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v5.0.0
+      hooks:
+          - id: check-added-large-files
+          - id: check-merge-conflict
+          - id: end-of-file-fixer
+          - id: trailing-whitespace
+    - repo: local
+      hooks:
+          - id: pants-fmt
+            name: Pants formatting
+            entry: "pants fmt ::"
+            language: system
+            pass_filenames: false
+            always_run: true
+          - id: pants-lint
+            name: Pants linting
+            entry: "pants lint ::"
+            language: system
+            pass_filenames: false
+            always_run: true
+          - id: pants-check
+            name: Pants type-checking
+            entry: "pants check ::"
+            language: system
+            pass_filenames: false
+            always_run: true
+          - id: pants-test
+            name: Run tests
+            entry: "pants test ::"
+            language: system
+            pass_filenames: false
+            always_run: true
+          - id: flawfinder
+            name: flawfinder
+            entry: flawfinder --quiet -S -D --error-level=1
+            language: system
+            files: \.(cc|h)$
+            pass_filenames: true
+            always_run: false
+          - id: lizard
+            name: Check code cyclomatic complexity
+            entry: lizard -C 15 -i 0 -w -l c,cc,cpp,h,hpp
+            language: system
+            pass_filenames: true
+            always_run: false

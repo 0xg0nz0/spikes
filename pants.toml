@@ -1,0 +1,85 @@
+[GLOBAL]
+pants_version = "2.24.2"
+backend_packages = [
+  "pants.backend.build_files.fmt.ruff",
+  "pants.backend.docker",
+  "pants.backend.docker.lint.hadolint",
+  "pants.backend.plugin_development",
+  "pants.backend.python",
+  "pants.backend.python.providers.experimental.pyenv",
+  "pants.backend.python.typecheck.mypy",
+  "pants.backend.shell",
+  "pants.backend.shell.lint.shfmt",
+  "pants.backend.shell.lint.shellcheck",
+  "pants.backend.tools.taplo",
+  "pants.backend.experimental.adhoc",
+  "pants.backend.experimental.cc",
+  "pants.backend.experimental.cc.lint.clangformat",
+  "pants.backend.experimental.python",
+  "pants.backend.experimental.python.lint.add_trailing_comma",
+  "pants.backend.experimental.python.lint.ruff.check",
+  "pants.backend.experimental.python.lint.ruff.format",
+  "pants.backend.experimental.rust",
+  "pants.backend.experimental.tools.yamllint",
+
+  # local plugins
+  "markdown",
+]
+pythonpath = ["%(buildroot)s/pants-plugins"]
+
+[cli.alias]
+pre-commit = "fmt lint check test"
+
+[export]
+py_editable_in_resolve = []
+resolve = ["repo-deps", "pants-plugins"]
+
+[markdownlint]
+config = ".github/linters/pymarkdown.json"
+
+[mypy]
+config = ".github/linters/mypy.ini"
+install_from_resolve = "mypy"
+
+[pytest]
+install_from_resolve = "pytest"
+requirements = ["//3rdparty/python:pytest"]
+
+[python]
+default_resolve = "repo-deps"
+enable_resolves = true
+interpreter_constraints = ['==3.12.*']
+
+[python.resolves]
+
+# plugins
+pants-plugins = "pants-plugins/requirements.lock"
+pymarkdown = "pants-plugins/markdown/pymarkdown.lock"
+
+# tools
+pytest = "3rdparty/python/pytest.lock"
+mypy = "3rdparty/python/mypy.lock"
+ruff = "3rdparty/python/ruff.lock"
+
+# libraries
+repo-deps = "3rdparty/python/repo-deps.lock"
+
+[python.resolves_to_interpreter_constraints]
+pants-plugins = ["==3.9.*"]
+pymarkdown = ["==3.9.*"]
+
+[ruff]
+config = ".github/linters/ruff.toml"
+
+[source]
+root_patterns = ["pants-plugins"]
+
+[taplo]
+glob_pattern = ["**/*.toml", "!pyproject.toml", "!.taplo.toml", "!taplo.toml"]
+
+[test]
+attempts_default = 3
+
+[yamllint]
+config_file_name = ".github/linters/yamllint.yml"
+exclude = []

@@ -1,0 +1,58 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "JetBrains Mono",
+    "evenBetterToml.schema.catalogs": [
+        "https://www.schemastore.org/api/json/catalog.json"
+    ],
+    "extensions.ignoreRecommendations": true,
+    "files.autoSave": "afterDelay",
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "markdownlint.config": {
+        "extends": "$workspaceRoot/.github/linters/markdownlint.json"
+    },
+    "mypy-type-checker.args": ["--config-file", "${workspaceFolder}/.github/linters/mypy.ini"],
+    "mypy-type-checker.ignorePatterns": ["**/dist/**"],
+    "mypy-type-checker.importStrategy": "fromEnvironment",
+    "mypy-type-checker.preferDaemon": true,
+    "python.analysis.exclude": [
+        ".pants.d/**/*",
+        "dist/**/*"
+    ],
+    "python.analysis.extraPaths": [
+        "./pants-plugins"
+    ],
+    "python.defaultInterpreterPath": "${workspaceFolder}/dist/export/python/virtualenvs/repo-deps/3.12.4/bin/python3",
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests/",
+        "-rP"
+    ],
+    "ruff.configuration": "${workspaceFolder}/.github/linters/ruff.toml",
+    "ruff.enable": true,
+    "ruff.importStrategy": "fromEnvironment",
+    "testMate.cpp.debug.breakOnFailure": true,
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            "pattern": "${workspaceFolder}/build/tests/**/*_test",
+            "catch2": {
+                "testGrouping": {
+                    "groupByTags": {
+                        "tags": []
+                    }
+                }
+            }
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#1D0F91",
+        "titleBar.activeBackground": "#2915CB",
+        "titleBar.activeForeground": "#FDFDFF"
+    },
+    "workbench.colorTheme": "Atom One Dark"
+}

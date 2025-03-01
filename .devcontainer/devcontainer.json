@@ -1,0 +1,113 @@
+{
+    "name": "Spikes",
+    "image": "mcr.microsoft.com/devcontainers/base:noble",
+    "remoteEnv": {
+        "PATH": "${containerEnv:PATH}:/usr/local/lib/wasi-sdk-25.0/bin:/usr/local/py-utils/bin:/home/vscode/.local/bin"
+    },
+    "features": {
+        "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.16": {
+            "version": "25"
+        },
+        "ghcr.io/devcontainers/features/common-utils:2": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/rust:1": {},
+        "ghcr.io/devcontainers-contrib/features/act:1": {},
+        "ghcr.io/devcontainers-contrib/features/apt-packages": {
+            "packages": [
+                "autoconf",
+                "autoconf-archive",
+                "automake",
+                "bison",
+                "build-essential",
+                "cppcheck",
+                "clang",
+                "clang-format",
+                "clang-tidy",
+                "clang-tools",
+                "clangd",
+                "cmake",
+                "crossbuild-essential-amd64",
+                "doxygen",
+                "flawfinder",
+                "flex",
+                "gcovr",
+                "gdb",
+                "graphviz",
+                "lcov",
+                "libboost-all-dev",
+                "libc++-dev",
+                "libc++abi-dev",
+                "libclang-dev",
+                "libclang-rt-dev",
+                "libclang-rt-dev-wasm64",
+                "libtool",
+                "lld",
+                "llvm",
+                "lz4",
+                "ninja-build",
+                "python3-full",
+                "valgrind",
+                "xdg-utils",
+                "zstd"
+            ]
+        },
+        "ghcr.io/devcontainers-contrib/features/devcontainers-cli:1": {},
+        "ghcr.io/devcontainers-contrib/features/markdownlint-cli2:1": {},
+        "ghcr.io/devcontainers-contrib/features/mypy:2": {},
+        "ghcr.io/devcontainers-contrib/features/pipx-package:1": {
+            "package": "lizard"
+        },
+        "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
+        "ghcr.io/devcontainers-contrib/features/ruff:1": {},
+        "ghcr.io/va-h/devcontainers-features/uv:1": {},
+        "./mold": {
+            "version": "2.36.0"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "adpyke.codesnap",
+                "akamud.vscode-theme-onedark",
+                "bytecodealliance.wit-idl",
+                "charliermarsh.ruff",
+                "christian-kohler.path-intellisense",
+                "davidanson.vscode-markdownlint",
+                "donjayamanne.githistory",
+                "donjayamanne.python-environment-manager",
+                "dtsvet.vscode-wasm",
+                "eamodio.gitlens",
+                "formulahendry.code-runner",
+                "foxundermoon.shell-format",
+                "github.copilot",
+                "github.remotehub",
+                "github.vscode-github-actions",
+                "github.vscode-pull-request-github",
+                "hediet.vscode-drawio",
+                "ionutvmi.path-autocomplete",
+                "llvm-vs-code-extensions.vscode-clangd",
+                "mads-hartmann.bash-ide-vscode",
+                "matepek.vscode-catch2-test-adapter",
+                "ms-python.mypy-type-checker",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-keymap",
+                "ms-toolsai.jupyter-renderers",
+                "narasimapandiyan.jetbrainsmono",
+                "njpwerner.autodocstring",
+                "redhat.vscode-yaml",
+                "robotpajamas.vscode-suspenders@prerelease",
+                "shd101wyy.markdown-preview-enhanced",
+                "stuart.unique-window-colors",
+                "styled-components.vscode-styled-components",
+                "tamasfe.even-better-toml",
+                "vscode-icons-team.vscode-icons",
+                "waderyan.gitblame",
+                "xelad0m.jupyter-toc"
+            ]
+        }
+    },
+    "onCreateCommand": "${containerWorkspaceFolder}/.devcontainer/pre-install.sh",
+    "postCreateCommand": "${containerWorkspaceFolder}/.devcontainer/post-install.sh"
+}

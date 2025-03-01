@@ -1,0 +1,11 @@
+include = ["**/*.py", "**/*.ipynb"]
+line-length = 120
+target-version = "py312"
+
+[lint]
+preview = true
+select = ["E", "F", "B", "Q", "I", "N", "W"]
+ignore = []
+
+[format]
+docstring-code-format = true
