@@ -7,24 +7,12 @@ Monorepo for various small experiments.
 The build comes in three parts:
 
 - IDE: VSCode devcontainer (_optional_)
-- Cross-language build: pants
+- Cross-language build: bazel
 - CI: GitHub Actions
 
 You don't have to use VSCode -- you can run everything command-line -- but it's strongly encouraged because of the complex tooling setup; the devcontainer ensures the entire setup is consistent and runs it all under Ubuntu 24.02 ("Noble") regardless of host platform. Especially for the C++ parts of the monorepo build, running them on other operating systems can lead to unexpected behaviors or build failures.
 
 The setup should work for both x86 and ARM hardware. It's tested on Apple M1 (local) and x86 (CI); the local setup runs VSCode on a [colima](https://github.com/abiosoft/colima)-based Docker container with 8 cores and 10gb of memory.
-
-### Using pants
-
-This project uses [pants](https://pantsbuild.org) for its build process. The below is just a cheat sheet; if you want to learn more, read the Pants documentation.
-
-- `pants fmt ::`: auto-formats all files based on the same linting rules in `.github/linters` which are used in pre-commit and CI
-- `pants lint ::`: runs linters using `.github/linters` settings shared with pre-commit and CI
-- `pants check ::`: performs enhanced static checks (e.g. mypy for Python)
-- `pants test ::`: runs all unit tests
-- `pants pre-commit ::`: custom task that runs `fmt`, `lint`, `check` and `test` in a single call, to run the standard code quality and formatting before you commit
-
-You can scope the various goals like `fmt` to run on a single module, e.g. `pants fmt //wasmtime::` or run globally.
 
 ### Using pre-commit
 
@@ -55,18 +43,6 @@ To update `.pre-commit-config.yaml` automatically to latest published hook versi
 pre-commit autoupdate
 ```
 
-Wherever possible we are going to try and share the tools across Pants and pre-commit, so tool upgrades should be done as part of the re-locking process. (See below.)
-
-### HOWTO: Re-lock dependencies
-
-Pants is configured for hermetic builds where you 'lock' exact dependency versions based on a constraint; these lockfiles are then stored under `3rdparty/**/*.lock` and used by Pants for both tool and library versioning. If there are new patch versions, they will only be picked up after an explicit re-lock, which is done by:
-
-```shell
-pants generate-lockfiles
-```
-
-which will summarize the added and upgraded modules for you. You then re-run your tests, CI, etc., to ensure the new versions work. This ensures the build is fully isolated from any external changes, including tool upgrades, though the cost of it is that Pants needs to download tools at runtime, which it caches. For wasmtime toolchain plugin we'll do this as well, so upgrading to a new WASM SDK will require a re-locking. Pull requests for lock updates can also be quite large -- similar to Poetry lockfiles.
-
 ### HOWTO: Set up colima for local Docker on MacOS (optional)
 
 The VSCode devcontainer should work with Docker Desktop, Rancher Desktop and Podman Desktop, but the recommended setup on Apple Silicon is [colima](https://github.com/abiosoft/colima). It is fully free and lightweight; you can find a sample Linux template under `.vscode\colima.yaml`.
@@ -75,7 +51,7 @@ To set up:
 
 ```shell
 brew install colima
-colima start -p colima-linux-vm --edit
+colima start --edit
 ```
 
 then save the contents of `colima.yaml` in the editor to create your local VM. VSCode should auto-recognize it; just check out the repo and open in VSCode.

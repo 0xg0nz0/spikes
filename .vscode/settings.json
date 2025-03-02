@@ -20,12 +20,9 @@
     "mypy-type-checker.importStrategy": "fromEnvironment",
     "mypy-type-checker.preferDaemon": true,
     "python.analysis.exclude": [
-        ".pants.d/**/*",
         "dist/**/*"
     ],
-    "python.analysis.extraPaths": [
-        "./pants-plugins"
-    ],
+    "python.analysis.extraPaths": [],
     "python.defaultInterpreterPath": "${workspaceFolder}/dist/export/python/virtualenvs/repo-deps/3.12.4/bin/python3",
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": false,

@@ -13,30 +13,6 @@ repos:
           - id: trailing-whitespace
     - repo: local
       hooks:
-          - id: pants-fmt
-            name: Pants formatting
-            entry: "pants fmt ::"
-            language: system
-            pass_filenames: false
-            always_run: true
-          - id: pants-lint
-            name: Pants linting
-            entry: "pants lint ::"
-            language: system
-            pass_filenames: false
-            always_run: true
-          - id: pants-check
-            name: Pants type-checking
-            entry: "pants check ::"
-            language: system
-            pass_filenames: false
-            always_run: true
-          - id: pants-test
-            name: Run tests
-            entry: "pants test ::"
-            language: system
-            pass_filenames: false
-            always_run: true
           - id: flawfinder
             name: flawfinder
             entry: flawfinder --quiet -S -D --error-level=1
