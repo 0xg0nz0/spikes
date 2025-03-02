@@ -1,0 +1,24 @@
+{
+    "id": "golang-wasi",
+    "version": "0.0.2",
+    "name": "wasm + wasi for Go",
+    "documentationURL": "https://github.com/dev-wasm/dev-wasm-feature",
+    "description": "Installs the web assembly target for Go",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "0.35.0",
+                "0.33.0",
+                "0.32.1",
+                "0.31.2"
+            ],
+            "default": "0.35.0",
+            "description": "Select or enter a TinyGo Version to install"
+        }
+    },
+    "mounts": [],
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/go"
+    ]
+}

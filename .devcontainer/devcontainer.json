@@ -35,6 +35,7 @@
                 "gcovr",
                 "gdb",
                 "graphviz",
+                "iputils-ping",
                 "lcov",
                 "libboost-all-dev",
                 "libc++-dev",
@@ -61,9 +62,13 @@
         },
         "ghcr.io/devcontainers-contrib/features/pre-commit:2": {},
         "ghcr.io/devcontainers-contrib/features/ruff:1": {},
+        "ghcr.io/devcontainers-extra/features/protoc:1": {},
         "ghcr.io/va-h/devcontainers-features/uv:1": {},
         "./mold": {
             "version": "2.36.0"
+        },
+        "./golang-wasi/": {
+            "version": "0.35.0"
         }
     },
     "customizations": {
@@ -99,6 +104,7 @@
                 "ms-toolsai.jupyter-renderers",
                 "narasimapandiyan.jetbrainsmono",
                 "njpwerner.autodocstring",
+                "pbkit.vscode-pbkit",
                 "redhat.vscode-yaml",
                 "shd101wyy.markdown-preview-enhanced",
                 "stuart.unique-window-colors",
