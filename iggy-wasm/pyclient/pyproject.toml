@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "spikes-wasmtime-pyclient"
+name = "iggy-wasm-pyclient"
 version = "0.1.0"
 description = "A Python client for interacting with WebAssembly modules"
 dependencies = [

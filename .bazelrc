@@ -1,0 +1,2 @@
+build --show_timestamps --keep_going --symlink_prefix=bazel-out/
+build --color=yes
