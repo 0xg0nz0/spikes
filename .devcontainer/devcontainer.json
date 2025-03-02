@@ -8,8 +8,10 @@
         "devwasm.azurecr.io/dev-wasm/dev-wasm-feature/wasmtime-wasi:0.0.16": {
             "version": "25"
         },
+        "ghcr.io/balazs23/devcontainers-features/bazel:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/go:1": {},
         "ghcr.io/devcontainers/features/rust:1": {},
         "ghcr.io/devcontainers-contrib/features/act:1": {},
         "ghcr.io/devcontainers-contrib/features/apt-packages": {
@@ -69,6 +71,7 @@
             "extensions": [
                 "adpyke.codesnap",
                 "akamud.vscode-theme-onedark",
+                "bazelbuild.vscode-bazel",
                 "bytecodealliance.wit-idl",
                 "charliermarsh.ruff",
                 "christian-kohler.path-intellisense",
