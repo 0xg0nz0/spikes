@@ -1,6 +1,7 @@
 [package]
 name = "iggy_wasm_server"
 version = "0.0.1"
+edition = "2021"
 license = "Unlicense"
 description = "Sample data streamer embeddable via a WASI component"
 

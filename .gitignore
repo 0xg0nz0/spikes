@@ -171,4 +171,7 @@ cython_debug/
 .pypirc
 
 # Bazel
-bazel-out/
+target-bzl/
+
+# Local Iggy install
+.iggy/

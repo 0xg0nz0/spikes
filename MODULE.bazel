@@ -7,8 +7,7 @@ module(
     version = "",
 )
 
-# Hedron's Compile Commands Extractor for Bazel
-# https://github.com/hedronvision/bazel-compile-commands-extractor
+# rule to generate compile-commands.json for VSCode C++ Intellisense
 bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
 git_override(
     module_name = "hedron_compile_commands",

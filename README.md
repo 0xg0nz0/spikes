@@ -23,6 +23,20 @@ VSCode doesn't handle the output and errors from pre-commit very well if you the
 - `pre-commit run`: run all pre-commit checks on the current changelist
 - `pre-commit run --all-files`: run all pre-commit checks on all files
 
+## Running Iggy
+
+For experiments using the [Iggy](https://iggy.rs) server (which is pre-installed in Docker cache on startup) you can use Docker Compose to run the server itself:
+
+```shell
+docker compose up
+```
+
+and you can use Iggy CLI interactively to interactive with it, e.g. to get current runtime statistics:
+
+```shell
+docker exec -it iggy-server /iggy/iggy -u iggy -p iggy --tcp-server-address 127.0.0.1:3000 stats
+```
+
 ## HOWTO guides
 
 Some short guides to common tasks.
